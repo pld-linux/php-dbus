@@ -14,6 +14,7 @@ Source0:	http://labs.gree.jp/data/source/php-dbus-%{version}.tgz
 URL:		http://labs.gree.jp/Top/OpenSource/DBus-en.html
 BuildRequires:	dbus-devel
 BuildRequires:	php-devel >= 4:5.0.4
+BuildRequires:	pkgconfig
 BuildRequires:	rpmbuild(macros) >= 1.519
 %{?requires_php_extension}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
