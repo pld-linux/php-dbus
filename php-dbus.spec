@@ -2,18 +2,19 @@
 # Conditional build:
 %bcond_without	tests		# build without tests
 
+%define		php_name	php%{?php_suffix}
 %define		modname	dbus
 Summary:	DBus binding for PHP
-Name:		php-%{modname}
+Name:		%{php_name}-%{modname}
 Version:	0.1.2
-Release:	1
+Release:	2
 License:	PHP 3.0
 Group:		Development/Languages/PHP
 Source0:	http://labs.gree.jp/data/source/php-dbus-%{version}.tgz
 # Source0-md5:	2fc2b92ac805128326ecfa382f6807ab
 URL:		http://labs.gree.jp/Top/OpenSource/DBus-en.html
+BuildRequires:	%{php_name}-devel >= 4:5.0.4
 BuildRequires:	dbus-devel
-BuildRequires:	php-devel >= 4:5.0.4
 BuildRequires:	pkgconfig
 BuildRequires:	rpmbuild(macros) >= 1.519
 %{?requires_php_extension}
@@ -25,7 +26,7 @@ provides D-Bus interfaces via PHP classes and enables Inter Porcess
 Communication in D-Bus.
 
 %prep
-%setup -q
+%setup -q -n php-%{modname}-%{version}
 
 %build
 phpize
