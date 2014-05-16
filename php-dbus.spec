@@ -7,7 +7,7 @@
 Summary:	DBus binding for PHP
 Name:		%{php_name}-%{modname}
 Version:	0.1.2
-Release:	2
+Release:	3
 License:	PHP 3.0
 Group:		Development/Languages/PHP
 Source0:	http://labs.gree.jp/data/source/php-dbus-%{version}.tgz
@@ -18,6 +18,7 @@ BuildRequires:	dbus-devel
 BuildRequires:	pkgconfig
 BuildRequires:	rpmbuild(macros) >= 1.519
 %{?requires_php_extension}
+Obsoletes:	php-dbus < 0.1.2-2
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
